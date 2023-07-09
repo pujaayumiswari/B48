@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>blog</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/project.css" />
+
+   <!--font awesome ikon-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+   <!--navbar start-->
+   <nav>
+    <ul>
+      <li>
+        <a href="#" class="navbar-logo">Book<span>Story</span></a>
+      </li>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="project.html"> project</a></li>
+      <div class="nav-right">
+        <a href="contact.html">Contact</a>
+      </div>
+    </ul>
+  </nav>
+
+  <!--navbar end-->
+  <section>
+    <h1>ADD MY PROJECT</h1>
+    <div class="main-container">
+      <form onsubmit="addProject(event)">
+        <div class="project-name">
+          <label for="input-project">Project Name</label>
+          <input type="text" id="input-project" />
+        </div>
+        <div class="date">
+          <div class="start-date">
+            <label for="input-start">Start Date</label>
+            <input type="date" id="input-start" />
+          </div>
+          <div class="end-date">
+            <label for="input-end">End Date</label>
+            <input type="date" id="input-end" />
+          </div>
+        </div>
+        <div class="description">
+          <label for="description">Description</label>
+          <textarea id="description" cols="30" rows="5"></textarea>
+        </div>
+        <label>Technologies</label>
+        <div class="container-technologies">
+          <div class="left">
+            <div>
+              <input type="checkbox" id="javascript" />
+              <label for="javascript">JavaScript</label>
+            </div>
+            <div>
+              <input type="checkbox" id="reactJS" />
+              <label for="reactJS">ReactsJS</label>
+            </div>
+          </div>
+          <div class="right">
+            <div>
+              <input type="checkbox" id="golang" />
+              <label for="golang">golang</label>
+            </div>
+            <div>
+              <input type="checkbox" id="java" />
+              <label for="java">java</label>
+            </div>
+          </div>
+        </div>
+        <div>
+          <label for="input-image">Upload Image</label>
+          <label for="input-image" class="input-image">
+            <span>choose</span>
+            <input type="file" id="input-image" hidden />
+            <i class="fa-solid fa-paperclip"></i>
+          </label>
+        </div>
+        <div class="btn-submit">
+          <button>Submit</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+ 
+
+  <!-- Blog detail -->
+  <hr />
+    <h1>MY PROJECT</h1>
+    <div class="row" id="contents">
+      <div class="column">
+        <div class="img">
+          <img src="/image/bbok1.jpg"/>
+        </div>
+        <a href="projectdetail.html" style="color: black;">
+        <h3>Filsafat Cinta</h3>
+        </a>
+        <p>durasi: 3 Bulan</p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus quod placeat tempore nihil earum odio reiciendis, dolores neque quae doloremque beatae dolorum odit necessitatibus est.
+        </p>
+        <div class="technologies-icon">
+          <i class="fa-brands fa-square-js"></i>
+          <i class="fa-brands fa-react"></i>
+          <i class="fa-brands fa-golang"></i>
+          <i class="fa-brands fa-java"></i>
+        </div>        
+        <div class="button-container">
+          <button class="edit-button">Edit</button>
+          <button class="delete-button">Delete</button>
+        </div> 
+              
+      </div>
+      <div class="row" id="contents">
+        <div class="column">
+          <div class="img">
+            <img src="/image/book2.jpg"/>
+          </div>
+          <a href="projectdetail.html" style="color: black;">
+          <h3>Filsafat Cinta</h3>
+          </a>
+          <p>durasi: 3 Bulan</p>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur accusantium corrupti tempore pariatur sint, aut voluptatum quaerat excepturi eius ullam.</p>
+          <div class="technologies-icon">
+            <i class="fa-brands fa-square-js"></i>
+            <i class="fa-brands fa-react"></i>
+            <i class="fa-brands fa-golang"></i>
+            <i class="fa-brands fa-java"></i>
+          </div>        
+          <div class="button-container">
+            <button class="edit-button">Edit</button>
+            <button class="delete-button">Delete</button>
+          </div> 
+                
+        </div>
+        <div class="row" id="contents">
+          <div class="column">
+            <div class="img">
+              <img src="/image/book3.jpg"/>
+            </div>
+            <a href="projectdetail.html" style="color: black;">
+            <h3>Beautiful Flowers</h3>
+            </a>
+            <p>durasi: 3 Bulan</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur accusantium corrupti tempore pariatur sint, aut voluptatum quaerat excepturi eius ullam.</p>
+            <div class="technologies-icon">
+              <i class="fa-brands fa-square-js"></i>
+              <i class="fa-brands fa-react"></i>
+              <i class="fa-brands fa-golang"></i>
+              <i class="fa-brands fa-java"></i>
+            </div>        
+            <div class="button-container">
+              <button class="edit-button">Edit</button>
+              <button class="delete-button">Delete</button>
+            </div> 
+                  
+          </div>
+
+  
+  <script src="/js/project.js"></script>
+</body>
+</html>
+  
+</body>
+</html>

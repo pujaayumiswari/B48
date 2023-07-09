@@ -1,0 +1,138 @@
+/*contact styling*/
+*{
+  font-family: 'poppins', sans-serif;
+  margin: 0;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 350px;
+}
+
+.contact-container{
+  justify-content: center;
+  margin-top: 100px;
+  display: flex;
+}
+.contact-container .form div{
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+}
+
+.form h2{
+  margin: auto;
+  font-size: 2em;
+  font-weight: 700;
+  text-shadow: 1px 1px 1px #919191,
+  1px 2px 1px #919191,
+  1px 3px 1px #919191;
+  
+
+}
+input, select{
+  border: none;
+  padding: 10px 12px;
+  border-radius: 5px;
+  resize: none;
+  box-shadow: 1px 1px 1px #919191,
+  1px 2px 1px #919191;
+  margin-top: 15px;
+
+  
+}
+textarea{
+  resize: none;
+  padding: 40px 13px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px #919191,
+  1px 2px 1px #919191;
+  
+}
+
+input:hover, select:hover, textarea:hover{
+  background-color: rgb(193, 205, 215);
+}
+button {
+  margin: 5px;
+  border: none;
+  border-radius: 10px;
+  width: 80px;
+  height: 30px;
+  color: rgb(243, 239, 242);
+  padding: 12px 12px auto;
+  align-content: center;
+  background-color: black;
+  cursor: pointer;
+  margin-left: 250px;
+  box-shadow: 1px 1px 1px   #877764,
+    1px 2px 1px   #877764,
+    1px 3px 1px  #877764;
+}
+  
+
+
+button:hover{
+background-color: #ec4d37;
+width: 85px;
+}
+
+/*style project*/
+
+.checkbox-container input{
+  width: 20px;
+  box-shadow: none;
+}
+.input-image input{
+ background-color: white;
+}
+input[type='file'] {
+  color: rgba(0, 0, 0, 0)
+}
+
+/*my project style */
+
+hr{
+ margin-top: 20px;
+ margin-left: 20px;
+ margin-right: 20px;
+}
+h1{
+  align-items: center;
+  justify-content: center;
+ display: flex;
+ margin-top: 20px;
+}
+.card-blog{
+  margin-top: 20px;
+  height: 500px;
+  width: 300px;
+  background-color: #919191;
+  border-radius: 3%;
+}
+.img img{
+  height: 200px;
+  width: 280px;
+  padding: 10px;
+  border-radius: 10px;
+}
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.edit-button, .delete-button {
+  padding: 6px 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-button {
+  background-color: #f44336;
+}
+
