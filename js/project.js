@@ -85,7 +85,7 @@ function renderProject() {
           <img src="${dataBlog[i].image}"/>
         </div>
         <a href="projectdetail.html" style="color: black;">
-        <h3>${dataBlog[i].projectName}</h3>
+        <h2>${dataBlog[i].projectName}</h2>
         </a>
         <p>${getFullTime(dataBlog[i].postAt)}</p>
         <p> Durasi : ${dataBlog[i].DistanceTime}

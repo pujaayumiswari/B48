@@ -2,6 +2,10 @@
 
   /* project styling */
 
+ body{
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
+                url(image/bg\ \(2\).jpg)
+  }
 h1 {
   margin-top: 2em;
   margin-bottom: 1em;
@@ -163,33 +167,37 @@ textarea {
    .column{
      margin-top: 20px;
      width: 300px;
-     border-radius: 3%;
-     background-color: #847460;
+     border-radius: 5%;
+     background-color: #080606;    
+     background: linear-gradient(transparent,#080606,#080606,#080606,transparent);
      margin-left: 90px;
      float: left;  
-     box-shadow: 1px 1px 1px   #877764,
-     1px 2px 1px   #877764,
-     1px 3px 1px  #877764;
  }
  .column:hover{
   background-color: #080606;
   background: linear-gradient(transparent,#080606,#080606,#080606,transparent);
  }
    
-   .column h3, p, i, a{
+   .column h2, p, i, a{
     padding: 5px;
     color: white;
     text-decoration: none;
    }
 
    .img img{
-     height: 200px;
-     width: 280px;
-     margin-left: 9px;
+     height: 250px;
+     width: 250px;
+     margin-left: 22px;
+     object-fit: cover;
+     border-radius: 50%;
+     box-shadow: 0 0 5px #0ef,
+     0 0 40px rgb(101, 224, 233),
+     0 0 20px rgb(31, 93, 98);
+   
    }
    .img:hover{
   background: linear-gradient(transparent,#45f3ff,#45f3ff,#45f3ff,transparent);
-  height: 230px;
+  
   }
 
    .button-container {
@@ -217,6 +225,8 @@ textarea {
    .projectdetail-img img{
     width: 600px;
     height: 500px;
+    object-fit: cover;
+   
    }
 
    .project-detail-card{
@@ -242,6 +252,18 @@ textarea {
     color: #080606;
    }
 
+/* responsive web */
 
+@media only screen and (max-width: 600px){
+  form{
+    margin: 0 auto;
+    width: 80%;
+  }
+  .projectdetail-img img{
+
+  }
+  .content-card2{
+    margin-left: 0px;
+  }
+}
  
-

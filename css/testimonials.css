@@ -1,0 +1,71 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+body{
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
+                url(image/bg\ \(2\).jpg)
+}
+h1{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+.container{
+  display: flex;
+}
+.card
+{
+  height: 300px;
+  margin: 50px;
+  box-shadow: 5px 5px 20px black;
+  margin-left: 100px;
+}
+img{
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+.card:hover{
+  height: 320px;
+  animation-duration: 1s;
+  cursor: pointer;
+  background: linear-gradient(transparent,#0ef,#0ef,transparent);
+
+ }
+
+.intro p{
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+.intro h4{
+  margin-top: 10px;
+  float: right;
+  margin-right: 10px;
+}
+
+.container-rating{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.rating-btn{
+  margin: 20px;
+  padding: 0px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  background-color: rgb(195, 192, 192);
+  color: white;
+  cursor: pointer;
+}
+
+@media only screen and (max-width:900px){
+  
+}

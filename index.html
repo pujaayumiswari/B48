@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home</title>
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/nav.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -15,42 +16,72 @@
       <li>
         <a href="#" class="navbar-logo">Book<span>Story</span></a>
       </li>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="project.html"> project</a></li>
+      <li><a href="index.html" class="collapse-item">Home</a></li>
+      <li><a href="project.html" class="collapse-item"> project</a></li>
+      <li><a href="testimonials.html" class="collapse-item"> Testimonials</a></li>
       <div class="nav-right">
-        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="collapse-item">Contact</a>
+      </div>
+      <div id="hamburger-btn" class="nav-right">
+        <button onclick="openHamburger()">
+        <i class="fa-solid fa-bars fa-lg"></i>
+        </button>
       </div>
     </ul>
   </nav>
-
+  <div class="hamburger-container" id="hamburger-container">
+    <a href="index.html" class="nav-active">Home</a>
+    <a href="project.html">project</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  </div>
+  </div>
   <!--navbar end-->
   
   <div class="card"> 
-    <div class="imgbx">
-      <img src="/image/pj.jpeg" >
-      <img src="/image/pujapj.jpg" >
-    </div>
     <div class="details">
-      <div class="content">
-        <h1>Hi welcome to my hut</h1>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit, cumque!</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, voluptates?</p>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus, quam.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, aspernatur!</p>
-        <span>
-          <a href="https://wa.me/6285878968842">Contact</a>
+      <div class="left">
+       <h1>Hi welcome to my hut</h1>
+        <br>وما بين حُبٍّ وحُبٍّ.. أُحبُّكِ أنتِ..
+          <br>وما بين واحدةٍ ودَّعَتْني..
+          <br>وواحدةٍ سوف تأتي..
+          
+          <br>أُفتِّشُ عنكِ هنا.. وهناكْ..
+          
+          <br>كأنَّ الزمانَ الوحيدَ زمانُكِ أنتِ..
+          <br>كأنَّ جميعَ الوعود تصبُّ بعينيكِ أنتِ..
+          <br>فكيف أُفسِّرُ هذا الشعورَ الذي يعتريني
+          
+            <br>وما بين حُبٍّ وحُبٍّ.. أُحبُّكِ أنتِ..
+          <br>وما بين واحدةٍ ودَّعَتْني..
+          <br>وواحدةٍ سوف تأتي..
+          
+          <br>أُفتِّشُ عنكِ هنا.. وهناكْ..
+          
+          <br>كأنَّ الزمانَ الوحيدَ زمانُكِ أنتِ..
+          <br>كأنَّ جميعَ الوعود تصبُّ بعينيكِ أنتِ..
+          <br>فكيف أُفسِّرُ هذا الشعورَ الذي يعتريني
+          
+          <span>
+          <a href="https://wa.me/6285878968842" class="btn-box">Contact</a>
           <p>Download CV</p>
           <i class="fa-solid fa-download"></i>
-          </span>
+        </span>
         <div class="social-icons">
           <a href="#"><i class="fa-brands fa-facebook"></i></a>
           <a href="#"><i class="fa-brands fa-instagram"></i></a>
           <a href="#"><i class="fa-brands fa-linkedin"></i></a>      
           <a href="#"><i class="fa-brands fa-youtube"></i></a>
-           </div>
+        </div>
+      </div>
+      <div class="right">
+        <img src="image/muhammad.jpeg" >
+        <h2>Puja Ayu Miswari</h2>
+        <h3>Fullstack Developer</h3>
       </div>
     </div>
-      
   </div>
+  <script src="js/nav.js"></script>
 </body>
 </html>

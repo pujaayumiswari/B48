@@ -4,28 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>blog</title>
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/project.css" />
+  <link rel="stylesheet" href="css/project.css" />
+  <link rel="stylesheet" href="css/nav.css" />
 
    <!--font awesome ikon-->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
-   <!--navbar start-->
-   <nav>
+  <!--navbar start-->
+  <nav>
     <ul>
       <li>
         <a href="#" class="navbar-logo">Book<span>Story</span></a>
       </li>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="project.html"> project</a></li>
+      <li><a href="index.html" class="collapse-item">Home</a></li>
+      <li><a href="project.html" class="collapse-item"> project</a></li>
+      <li><a href="testimonials.html" class="collapse-item"> Testimonials</a></li>
       <div class="nav-right">
-        <a href="contact.html">Contact</a>
+        <a href="contact.html" class="collapse-item">Contact</a>
+      </div>
+      <div id="hamburger-btn" class="nav-right">
+        <button onclick="openHamburger()">
+        <i class="fa-solid fa-bars fa-lg"></i>
+        </button>
       </div>
     </ul>
   </nav>
-
+  <div class="hamburger-container" id="hamburger-container">
+    <a href="index.html" class="nav-active">Home</a>
+    <a href="project.html">project</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  </div>
+  </div>
+  
+  
   <!--navbar end-->
   <section>
     <h1>ADD MY PROJECT</h1>
@@ -95,10 +110,10 @@
     <div class="row" id="contents">
       <div class="column">
         <div class="img">
-          <img src="/image/bbok1.jpg"/>
+          <img src="image/langit.jpg"/>
         </div>
         <a href="projectdetail.html" style="color: black;">
-        <h3>Filsafat Cinta</h3>
+        <h2>Filsafat Cinta</h2>
         </a>
         <p>durasi: 3 Bulan</p>
         <p>
@@ -119,10 +134,10 @@
       <div class="row" id="contents">
         <div class="column">
           <div class="img">
-            <img src="/image/book2.jpg"/>
+            <img src="image/sakura.jpg"/>
           </div>
           <a href="projectdetail.html" style="color: black;">
-          <h3>Filsafat Cinta</h3>
+          <h2>Filsafat Cinta</h2>
           </a>
           <p>durasi: 3 Bulan</p>
           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur accusantium corrupti tempore pariatur sint, aut voluptatum quaerat excepturi eius ullam.</p>
@@ -141,10 +156,10 @@
         <div class="row" id="contents">
           <div class="column">
             <div class="img">
-              <img src="/image/book3.jpg"/>
+              <img src="image/aurora.jpg"/>
             </div>
             <a href="projectdetail.html" style="color: black;">
-            <h3>Beautiful Flowers</h3>
+            <h2>Beautiful Flowers</h2>
             </a>
             <p>durasi: 3 Bulan</p>
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur accusantium corrupti tempore pariatur sint, aut voluptatum quaerat excepturi eius ullam.</p>
@@ -162,7 +177,8 @@
           </div>
 
   
-  <script src="/js/project.js"></script>
+  <script src="js/project.js"></script>
+  <script src="js/nav.js"></script>
 </body>
 </html>
   

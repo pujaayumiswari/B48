@@ -1,0 +1,33 @@
+.card {
+  margin: 50px 5%;
+  background-color: aqua;
+  padding: 20px;
+}
+.details {
+  display: flex;
+  justify-content: space-between;
+  background-color: aquamarine;
+}
+.right {
+  width: 250px;
+  flex: 50%;
+}
+.right img {
+  width: 100%;
+}
+.left {
+  width: 300px;
+  background-color: bisque;
+  flex: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .details {
+    display: flex;
+    flex-direction: column;
+    background-color: aquamarine;
+    align-items: center;
+  }
+  
+}

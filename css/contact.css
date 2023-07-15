@@ -1,7 +1,9 @@
 /*contact styling*/
-*{
+body{
   font-family: 'poppins', sans-serif;
   margin: 0;
+  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
+                url(image/background.jpg)
 }
 .form{
   display: flex;
@@ -55,7 +57,7 @@ textarea{
 input:hover, select:hover, textarea:hover{
   background-color: rgb(193, 205, 215);
 }
-button {
+#btn-btn {
   margin: 5px;
   border: none;
   border-radius: 10px;
@@ -71,17 +73,16 @@ button {
     1px 2px 1px   #877764,
     1px 3px 1px  #877764;
 }
-  
 
-
-button:hover{
+#btn-btn:hover{
 background-color: #ec4d37;
 width: 85px;
 }
 
+
 /*style project*/
 
-.checkbox-container input{
+/*.checkbox-container input{
   width: 20px;
   box-shadow: none;
 }
@@ -94,7 +95,7 @@ input[type='file'] {
 
 /*my project style */
 
-hr{
+/*hr{
  margin-top: 20px;
  margin-left: 20px;
  margin-right: 20px;
@@ -134,5 +135,5 @@ h1{
 
 .delete-button {
   background-color: #f44336;
-}
+}*/
 
