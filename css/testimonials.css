@@ -3,12 +3,7 @@
   padding: 0;
   font-family: sans-serif;
 }
-body{
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
-                url(image/bg\ \(2\).jpg)
-}
+
 h1{
   display: flex;
   align-items: center;
@@ -21,16 +16,11 @@ h1{
 .card
 {
   height: 300px;
-  margin: 50px;
   box-shadow: 5px 5px 20px black;
-  margin-left: 100px;
+  margin-top: 30px;
+
 }
-img{
-  height: 200px;
-  width: 200px;
-  object-fit: cover;
-  border-radius: 3px;
-}
+
 .card:hover{
   height: 320px;
   animation-duration: 1s;
@@ -57,11 +47,11 @@ img{
 }
 
 .rating-btn{
-  margin: 20px;
-  padding: 0px 20px;
-  font-size: 20px;
+  margin: 8px;
+  padding: 0px 10px;
+  font-size: 15px;
   font-weight: bold;
-  background-color: rgb(195, 192, 192);
+  background-color: black;
   color: white;
   cursor: pointer;
 }

@@ -79,28 +79,29 @@ function renderProject() {
   document.getElementById("contents").innerHTML = "";
   for (let i = 0; i < dataBlog.length; i++ ){
     document.getElementById("contents").innerHTML +=`
-    <div class="row" id="contents">
-      <div class="column">
-        <div class="img">
-          <img src="${dataBlog[i].image}"/>
-        </div>
-        <a href="projectdetail.html" style="color: black;">
-        <h2>${dataBlog[i].projectName}</h2>
-        </a>
-        <p>${getFullTime(dataBlog[i].postAt)}</p>
-        <p> Durasi : ${dataBlog[i].DistanceTime}
+    <div class="card" style="width: 18rem;" id="contents">
+    <img src="${dataBlog[i].image}" class="card-img-top" alt="">
+    <div class="card-body">
+      <a href="projectdetail.html" style="color: black;">
+      <h4 class="card-title">${dataBlog[i].projectName}</h4></a>
+      <p>${getFullTime(dataBlog[i].postAt)}</p>
+      <p> Durasi :${dataBlog[i].DistanceTime} </p>
         <p>${dataBlog[i].description}</p>
-        <div class="technologies-icon">
+      
+      <div class="technologies-icon">
         ${dataBlog[i].cbjavascript}
         ${dataBlog[i].cbreactJS}
         ${dataBlog[i].cbgolang}
         ${dataBlog[i].cbjava}
-        </div>        
-        <div class="button-container">
-          <button class="edit-button">Edit</button>
-          <button class="delete-button">Delete</button>
-        </div>       
-      </div>  
+      </div> 
+      <div class="button-container">
+        <button class="edit-button">Edit</button>
+        <button class="delete-button">Delete</button>
+      </div> 
+
+    </div>
+   
+  </div>
 `
   }
 

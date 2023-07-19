@@ -137,7 +137,7 @@
 
 const promise = new Promise((resolve, reject) =>{
   const xhr = new XMLHttpRequest()
-  xhr.open("GET", "https://api.npoint.io/4b21cc129aa29eac4b72", true)
+  xhr.open("GET", "https://api.npoint.io/92eaddaaced0dde8d5ea", true)
   xhr.onload = function(){
     if (xhr.status === 200){
       resolve(JSON.parse(xhr.responseText))
@@ -169,14 +169,16 @@ function allTestimonial(){
   let testimonialHTML = ""
   testimonialData.forEach((card, index) =>{
     testimonialHTML += `<div class="container" id="testimonials">
-         <div class="card">
-         <img src="${card.Image}" />
-         <div class="intro">
-         <p>"${card.quote}"</p>
-           <h4>${card.user}</h4>
-           <p class="author">${card.rating}<i class="fa-solid fa-star"></i></p>
-          </div>
-       </div>`
+    <div class="card" style="width: 18rem;">
+      <img src="${card.Image}" class="card-img-top" alt="">
+      <div class="card-body">
+        <h5 class="card-title">${card.user}</h5>
+        <p class="card-text">${card.quote}</p>
+        <h3 class="rate float-end">${card.rating}<i class="fa-solid fa-star float-end"></i></h3>
+       
+      </div>
+    </div>
+    </div>`
   })
   document.getElementById("testimonials").innerHTML = testimonialHTML
 }
@@ -191,14 +193,16 @@ function filteredTestimonial(rating) {
 
   filteredData.forEach((card) =>{
     filteredTestimonialHTML += `<div class="container" id="testimonials">
-    <div class="card">
-    <img src="${card.Image}" />
-    <div class="intro">
-    <p>"${card.quote}"</p>
-      <h4>${card.user}</h4>
-      <p class="author">${card.rating}<i class="fa-solid fa-star"></i></p>
-     </div>
-  </div>`
+    <div class="card" style="width: 18rem;">
+      <img src="${card.Image}" class="card-img-top" alt="">
+      <div class="card-body">
+        <h5 class="card-title">${card.user}</h5>
+        <p class="card-text">${card.quote}</p>
+        <h3 class="rate float-end">${card.rating}<i class="fa-solid fa-star float-end"></i></h3>
+       
+      </div>
+    </div>
+    </div>`
 }) 
   document.getElementById("testimonials").innerHTML = filteredTestimonialHTML
 }
