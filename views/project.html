@@ -7,67 +7,50 @@
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../public/project.css">
     <!--font awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-light">
-      <div class="container">
-        <a class="navbar-brand" href="#">
-          <img src="image\logo.png" />
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarTogglerDemo02"
-          aria-control="navbarTogglerDemo02"
-          aria-expanded="false"
-          aria-label="Toggle Navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active text-orange fw-bold" aria-current="page"  href="index.html">Home</a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link active text-orange fw-bold"
-                aria-current="page"
-                href="project.html"
-                >Add Project</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link active text-orange fw-bold"
-                aria-current="page"
-                href="testimonials.html"
-                >Testimonials</a
-              >
-            </li>
-          </ul>
-          <a href="#" class="btn btn-dark text-white px-2">Contact Me</a>
-        </div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+          <img src="../public/image/logo.png" class="navbar-brand logo" href="#" />
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                      <a class="nav-link active fw-bold" aria-current="page" href="/home">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link fw-bold" href="/project">My Project</a>
+                </li>
+                  <li class="nav-item">
+                    <a class="nav-link fw-bold" href="testimonials">Testimonials</a>
+                </li>
+              </ul>
+              <div class="d-flex">
+                  <a href="contact" class="btn btn-dark">Contact Me</a>
+              </div>
+          </div>
       </div>
-    </nav>
-
+  </nav>
     <div
       class="container-fluid d-flex justify-content-center align-items-center bg-secondary-subtle"
     >
       <div class="container-form">
         <h2 class="mb-3 text-center">ADD MY PROJECT</h2>
-        <form onsubmit="addProject(event)">
+        <form action="/home" method="POST">
           <div class="mb-3">
             <label for="input-project" class="form-label fw-bold">Project Name</label>
-            <input type="text" id="input-project" class="form-control" />
+            <input type="text" id="input-project" class="form-control" name="input-project"/>
           </div>
           <div class="mb-3">
             <label for="description" class="form-label fw-bold">Content</label>
-            <textarea id="description" class="form-control"></textarea>
+            <textarea id="description" class="form-control" name="content"></textarea>
           </div>
           <div class="row">
             <div class="col-6">
@@ -117,7 +100,7 @@
     <!-- Blog detail -->
   <hr />
   <div class="card m-5" style="width: 18rem;" id="contents">
-    <img src="image/muhammad.jpeg" class="card-img-top p-2" alt="">
+    <img src="../public/image/muhammad.jpeg" class="card-img-top p-2" alt="">
     <div class="card-body">
       <a href="projectdetail.html" style="color: black; text-decoration: none;">
       <h4 class="card-title ">Project 1</h4></a>
@@ -145,6 +128,5 @@
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
     ></script>
-    <script src="js/project.js"></script>
   </body>
 </html>

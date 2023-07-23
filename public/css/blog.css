@@ -1,0 +1,25 @@
+/* Blog Form */
+
+.blog-list-item
+{
+  justify-content: center;
+  align-items: center;
+  margin:50px;
+  background-color: rgb(214, 214, 214);
+  box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.75);
+  width: 75%;
+  margin-left: 140px;
+}
+.blog-image img{
+  height: 350px;
+  justify-content: space-around;
+  padding: 30px;
+}
+
+.card-content h1 a{
+  text-decoration: none;
+  font-weight: 700;
+  color: black;
+ 
+}
+
