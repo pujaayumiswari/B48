@@ -1,9 +1,11 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"html/template"
 	"net/http"
+	"revisiweb/connection"
 	"strconv"
 	"time"
 
@@ -24,45 +26,46 @@ type Project struct{
 }
 
 var Blogs = []Project{
-	{
-		ProjectName: "project 1",
-		StartDate: "2023-07-20",
-		EndDate: "2023-08-21",
-		Duration: "1 Bulan",
-		Description: "test 1",
-		Javascript: false,
-		Golang: true,
-		ReactJs: false,
-		Java: true,
+	// { Id: 0,
+	// 	ProjectName: "project 1",
+	// 	StartDate: "2023-07-20",
+	// 	EndDate: "2023-08-21",
+	// 	Duration: "1 Bulan",
+	// 	Description: "test 1",
+	// 	Javascript: true,
+	// 	Golang: true,
+	// 	ReactJs: false,
+	// 	Java: true,
 
-	},
-	{
-		ProjectName: "project 2",
-		StartDate: "2023-07-20",
-		EndDate: "2023-08-21",
-		Duration: "1 Bulan",
-		Description: "test 2",
-		Javascript: true,
-		Golang: true,
-		ReactJs: true,
-		Java: true,
-	},
-	{
-		ProjectName: "project 3",
-		StartDate: "2023-07-20",
-		EndDate: "2023-08-21",
-		Duration: "1 Bulan",
-		Description: "test 3",
-		Javascript: true,
-		Golang: true,
-		ReactJs: false,
-		Java: true,
-	},
+	// },
+	// {
+	// 	Id: 1,
+	// 	ProjectName: "project 2",
+	// 	StartDate: "2023-07-20",
+	// 	EndDate: "2023-08-21",
+	// 	Duration: "1 Bulan",
+	// 	Description: "test 2",
+	// 	Javascript: true,
+	// 	Golang: true,
+	// 	ReactJs: true,
+	// 	Java: true,
+	// },
+	// { Id: 2,
+	// 	ProjectName: "project 3",
+	// 	StartDate: "2023-07-20",
+	// 	EndDate: "2023-08-21",
+	// 	Duration: "1 Bulan",
+	// 	Description: "test 3",
+	// 	Javascript: true,
+	// 	Golang: true,
+	// 	ReactJs: false,
+	// 	Java: true,
+	// },
 }
 
 func main(){
 	e := echo.New()
-
+ connection.DatabaseConnect()
 	e.Static("/public", "public")
 	
 	
@@ -73,9 +76,9 @@ func main(){
 	e.GET("/contact", contact)
 	e.GET("/blog-detail/:id", blogDetail)
 	e.GET("/editProject/:id", editBlog)
-	e.GET("/blog", showBlog)
+	
 	// ...
-	e.POST("/blog", addBlog)
+	e.POST("/addblog", addBlog)
 	e.POST("/delete-blog/:id", deleteBlog)
 	e.POST("/edit-blog/:id", editBlog)
 // ...
@@ -87,15 +90,32 @@ func main(){
 //FUNCTION HOME
 func home(c echo.Context)error{
 	tmpl, err := template.ParseFiles("views/index.html")
-	 if err != nil{
+
+	data,_ := connection.Conn.Query(context.Background(),"SELECT id, project_name, start_date, end_date, duration, description, javascript, reactjs, golang, java FROM tb_project")
+	 
+	var result []Project
+	for data.Next() { 
+	var each = Project{}
+	err := data.Scan(&each.Id, &each.ProjectName, &each.StartDate, &each.EndDate, &each.Duration, &each.Description, &each.Javascript, &each.ReactJs, &each.Golang, &each.Java)
+		
+	if err != nil{
+		fmt.Println((err.Error()))
 		return c.JSON(http.StatusInternalServerError, err.Error())
 	 
 	}
-	Projects := map[string]interface{}{
-		"Projects" : Blogs,
+	result = append(result, each)
 }
-return tmpl.Execute(c.Response(), Projects)
+
+if err != nil {
+	return c.JSON(http.StatusInternalServerError, map[string]string{"message": err.Error()})
 }
+dataIndex := map[string]interface{}{
+	"Projects": result,
+}
+fmt.Println("ini data index", dataIndex)
+return tmpl.Execute(c.Response(), dataIndex)
+}
+
 
 
 //FUNCTION PROJECT
@@ -163,10 +183,10 @@ func blogDetail(c echo.Context)error{
 	startDateStr := c.FormValue("startDate")
 	endDateStr := c.FormValue("endDate")
 
-	javascript := c.FormValue("javascript") == "javascript"
-	reactJs := c.FormValue("reactJs") == "reactJs"
-	golang := c.FormValue("golang") == "golang"
-	java := c.FormValue("java") == "java"
+	javascript := c.FormValue("javascript")
+	reactJs := c.FormValue("reactJs") 
+	golang := c.FormValue("golang") 
+	java := c.FormValue("java") 
 
 	// Hitung durasi menggunakan fungsi calculateDuration
 	duration := calculateDuration(startDateStr, endDateStr)
@@ -187,10 +207,10 @@ func blogDetail(c echo.Context)error{
 		EndDate:   endDateStr,
 		Duration:    duration,
 		Description:    content,
-		Javascript: javascript,
-		ReactJs: reactJs,
-		Golang: golang,
-		Java: java,
+		Javascript: javascript == javascript,
+		ReactJs: reactJs == reactJs,
+		Golang: golang == golang,
+		Java: java == java,
 	}
 	
 	Blogs = append(Blogs, newProject)
@@ -235,13 +255,13 @@ func calculateDuration(startDateStr, endDateStr string) string {
 }
 
 //function show blog
-func showBlog(c echo.Context) error {
-	tmpl := template.Must(template.ParseFiles("blog.html"))
-	data := map[string]interface{}{
-		"Projects": Blogs,
-	}
-	return tmpl.Execute(c.Response(), data)
-}
+// func showBlog(c echo.Context) error {
+// 	tmpl := template.Must(template.ParseFiles("blog.html"))
+// 	data := map[string]interface{}{
+// 		"Projects": Blogs,
+// 	}
+// 	return tmpl.Execute(c.Response(), data)
+// }
 
 
 // Perbaiki fungsi deleteBlog
@@ -291,7 +311,7 @@ func editBlog(c echo.Context) error {
 
 
 
-//FUNGTION TESTIMONIALS
+//FUNCTION TESTIMONIALS
 func testimonials(c echo.Context)error{
 	tmpl, err := template.ParseFiles("views/testimonials.html")
 	 if err != nil{

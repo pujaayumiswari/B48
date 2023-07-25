@@ -1,98 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>blog</title>
-  <script src="https://kit.fontawesome.com/5140afd7e2.js" crossorigin=""></script>
-  <link
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>blog</title>
+    <script
+      src="https://kit.fontawesome.com/5140afd7e2.js"
+      crossorigin=""
+    ></script>
+    <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-      crossorigin="anonymous" />
-      <link rel="stylesheet" href="../public/css/blog.css" />
-</head>
-<body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
-        <img src="../public/image/logo.png" class="navbar-brand logo" href="#" />
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../public/css/blog.css" />
+  </head>
+  <body style="background-image: url(https://images.unsplash.com/photo-1594028235803-abe34abeb671?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2051&q=80)!important; background-position: center;background-repeat: no-repeat;background-size: cover;">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <img
+          src="../public/image/logo.png"
+          class="navbar-brand logo"
+          href="#"
+        />
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active fw-bold" aria-current="page" href="/">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link fw-bold" href="Blog">Blog</a>
-              </li>
-                <li class="nav-item">
-                  <a class="nav-link fw-bold" href="testimonials">Testimonials</a>
-              </li>
-            </ul>
-            <div class="d-flex">
-                <a href="contact" class="btn btn-dark">Contact Me</a>
-            </div>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active fw-bold" aria-current="page" href="/home"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="Blog">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fw-bold" href="testimonials">Testimonials</a>
+            </li>
+          </ul>
+          <div class="d-flex">
+            <a href="contact" class="btn btn-dark">Contact Me</a>
+          </div>
         </div>
+      </div>
+    </nav>
+
+    <!--content-->
+
+    <!-- dynamic content would be here -->
+
+    <div style="margin-top: 50px; text-align: end; margin-right: 120px">
+      <a
+        href="/project"
+        style="
+          background-color: orangered;
+          padding: 10px 20px;
+          color: white;
+          text-decoration: none;
+        "
+        >Add Blog</a
+      >
     </div>
-</nav>
-
-
-<!--content-->
-
-
-<!-- dynamic content would be here -->
-
-<div style="margin-top: 50px; text-align:end; margin-right: 120px;">
-  <a href="/project"
-  style="background-color: orangered; padding: 10px 20px; color: white; text-decoration: none">Add
-  Blog</a>
-</div>
-<div class="p-4">
-  <div class="row row-cols-md-3 row-cols-sm-2 row-cols-1 g-4 " id="project">
-    {{range $index, $blogs := .Blogs}}
-
-      <div class="col">
-          <div class="card">
-              <img src="../public/image/sakura.jpg" class="img p-4" style="height: 400px">
-              <div class="card-body">
-                  <h5 class="card-title mb-3 fw-bold" name="ProjectName" id="ProjectName">{{$blogs.ProjectName}}</h5>
-                  <div class="mb-2 fw-light"name="Duration" id="Duration">duration: {{$blogs.Duration}}</div>
-                  <p class="card-text" name="Description" id="Description">
-                    {{$blogs.Description}}
-                  </p>
-                  <div class="project-list-icon d-flex mb-5" id="project-list-icon">
-                    {{if $blogs.Javascript}}
-                    <i class="fa-brands fa-square-js"></i>
-                    {{end}}{{if $blogs.reactJs}}
-                    <i class="fa-brands fa-react"></i>
-                    {{end}}{{if $blogs.Golang}}
-                    <i class="fa-brands fa-golang"></i>
-                    {{end}}{{if $blogs.Java}}
-                    <i class="fa-brands fa-java"></i>
+    <div class="py-4">
+      <h1 class="fw-bold text-center" style="color: white;">MY PROJECTS</h1>
+      <div class="p-4">
+          <div class="row row-cols-md-3 row-cols-sm-2 row-cols-1  " id="project">
+              <div class="col">
+                {{range $index, $blogs := .Blogs}}
+                  <div class="card mb-3" style="box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.75);">
+                      <img src="../public/image/sakura.jpg" class="img p-4" style="height: 400px">
+                      <div class="card-body">
+                          <h5 class="card-title mb-3 fw-bold" name="ProjectName">{{$blogs.ProjectName}}</h5>
+                          <div class="mb-2 fw-light"name="Duration">duration:{{$blogs.Duration}}</div>
+                          <p class="card-text" name="Description">
+                           {{$blogs.Description}}
+                          </p>
+                          <div class="project-list-icon d-flex mb-5" id="project-list-icon">
+                            {{if $blogs.Javascript}}
+                            <i class="fa-brands fa-square-js" style="font-size: 20px; margin: 7px;"></i>
+                            {{end}}{{if $blogs.ReactJs}}
+                            <i class="fa-brands fa-react" style="font-size: 20px; margin: 7px;"></i>
+                            {{end}}{{if $blogs.Golang}}
+                            <i class="fa-brands fa-golang" style="font-size: 20px; margin: 7px;"></i>
+                            {{end}}{{if $blogs.Java}}
+                            <i class="fa-brands fa-java" style="font-size: 20px; margin: 7px;"></i>
+                            {{end}}
+                            </div>
+                            <div class="button-project mx-5" id="button-project" style="display: flex;">
+                              <form
+                                class="d-inline"
+                                action="/delete-blog/{{$index}}"
+                                method="POST"
+                                style="width: 100%; margin: 10px;"
+                              >
+                                <input type="hidden" name="id" value="{{$index}}" />
+                                <button
+                                  class="btn-delete-project btn btn-danger"
+                                  style="width: 100%"
+                                >
+                                  Delete
+                                </button>
+                              </form>
+              
+                              <form
+                                class="d-flex"
+                                action="/edit-blog/{{$index}}"
+                                method="POST"
+                                style="width: 100%; margin: 10px;"
+                              >
+                                <input type="hidden" name="id" value="{{$index}}" />
+                                <button
+                                  class="btn-edit-project btn btn-primary"
+                                  style="width: 100%"
+                                >
+                                  Edit
+                                </button>
+                              </form>
+                            </div>
+                        </div>
+                      </div>
                     {{end}}
-                </div>
-
-               
-<div class="button-project mx-5" id="button-project">
-  
-  <form class="d-inline" action="/delete-blog" method="POST" style="width: 100%">
-      <input type="hidden" name="id" value="{{$index}}">
-      <button class="btn-delete-project btn btn-danger" style="width: 100%">Delete</button>
-  </form>
- 
-  <form class="d-inline" action="/edit-blog" method="POST" style="width: 100%">
-      <input type="hidden" name="id" value="{{$index}}">
-      <button class="btn-edit-project btn btn-primary" style="width: 100%">Edit</button>
-  </form>
-</div>
-                </div>
-                {{end}}    
-              </div>
-            </div>     
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-</body>
+                    </div>
+     </div>
+                    </div>
+                    </div>
+                    
+                   
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

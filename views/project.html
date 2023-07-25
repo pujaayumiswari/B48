@@ -11,7 +11,7 @@
     <!--font awesome-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
-  <body>
+  <body style="background-image: url(https://images.unsplash.com/photo-1601624749564-fad3d2098ea8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80)!important; background-position: center;background-repeat: no-repeat;background-size: cover;">
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
       <div class="container-fluid">
           <img src="../public/image/logo.png" class="navbar-brand logo" href="#" />
@@ -26,7 +26,7 @@
                       <a class="nav-link active fw-bold" aria-current="page" href="/home">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link fw-bold" href="/project">My Project</a>
+                    <a class="nav-link fw-bold" href="/blog">Blog</a>
                 </li>
                   <li class="nav-item">
                     <a class="nav-link fw-bold" href="testimonials">Testimonials</a>
@@ -39,52 +39,52 @@
       </div>
   </nav>
     <div
-      class="container-fluid d-flex justify-content-center align-items-center bg-secondary-subtle"
+      class="container-fluid d-flex justify-content-center align-items-center"
     >
       <div class="container-form">
-        <h2 class="mb-3 text-center">ADD MY PROJECT</h2>
-        <form action="/home" method="POST">
+        <h2 class="mb-3 text-center" style="color: white;">ADD MY PROJECT</h2>
+        <form action="/addblog" method="POST">
           <div class="mb-3">
-            <label for="input-project" class="form-label fw-bold">Project Name</label>
+            <label for="input-project" class="form-label fw-bold" style="color: white;">Project Name</label>
             <input type="text" id="input-project" class="form-control" name="input-project"/>
           </div>
           <div class="mb-3">
-            <label for="description" class="form-label fw-bold">Content</label>
+            <label for="description" class="form-label fw-bold" style="color: white;">Content</label>
             <textarea id="description" class="form-control" name="content"></textarea>
           </div>
           <div class="row">
             <div class="col-6">
-                <label class="form-label" for="input-start">Start Date</label>
+                <label class="form-label" for="input-start" style="color: white;">Start Date</label>
                 <input class="form-control mb-2" type="date" name="startDate" id="input-start" required>
             </div>
             <div class="col-6">
-                <label class="form-label" for="input-end">End Date</label>
+                <label class="form-label" for="input-end" style="color: white;">End Date</label>
                 <input class="form-control mb-2" type="date" name="endDate" id="input-end" required>
             </div>
         </div>
         <div class="row mt-2">
-          <label class="form-label" for="">Technologies</label>
+          <label class="form-label" for="" style="color: white;">Technologies</label>
           <div class="col">
               <input type="checkbox" class="mx-2 check" id="javascript" name="javascript" value="javascript">
-              <label class="form-label" for="" class="mx-2 fw-normal">Javascript</label>
+              <label class="form-label" for="" class="mx-2 fw-normal" style="color: white;">Javascript</label>
           </div>
           <div class="col">
               <input type="checkbox" class="mx-2 check" id="reactJS" name="reactJS" value="reactjs">
-              <label class="form-label" for="reactJS" class="mx-2 fw-normal">React JS</label>
+              <label class="form-label" for="reactJS" class="mx-2 fw-normal" style="color: white;">React JS</label>
           </div>
       </div>
       <div class="row">
           <div class="col">
               <input type="checkbox" class="mx-2 check" id="golang" name="golang" value="golang">
-              <label class="form-label" for="" class="mx-2 fw-normal">golang</label>
+              <label class="form-label" for="" class="mx-2 fw-normal" style="color: white;">golang</label>
           </div>
           <div class="col">
               <input type="checkbox" class="mx-2 check" id="java" name="java" value="java">
-              <label class="form-label" for="" class="mx-2 fw-normal">java</label>
+              <label class="form-label" for="" class="mx-2 fw-normal" style="color: white;">java</label>
           </div>
       </div>
           <div class="mb-3">
-            <label for="input-image" class="form-label">Upload Image</label>
+            <label for="input-image" class="form-label" style="color: white;">Upload Image</label>
             <input type="file" id="input-image" class="form-control" />
           </div>
           <div class="d-grip gap-2 d-md-flex justify-content-md-end">
@@ -99,30 +99,61 @@
 
     <!-- Blog detail -->
   <hr />
-  <div class="card m-5" style="width: 18rem;" id="contents">
-    <img src="../public/image/muhammad.jpeg" class="card-img-top p-2" alt="">
-    <div class="card-body">
-      <a href="projectdetail.html" style="color: black; text-decoration: none;">
-      <h4 class="card-title ">Project 1</h4></a>
-      <p></p>
-      <p> Durasi : 3 Bulan
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      
-      <div class="technologies-icon">
-        <i class="fa-brands fa-square-js"></i>
-        <i class="fa-brands fa-react"></i>
-        <i class="fa-brands fa-golang"></i>
-        <i class="fa-brands fa-java"></i>
-      </div> 
-      <div class="button-container">
-        <button class="edit-button">Edit</button>
-        <button class="delete-button">Delete</button>
-      </div> 
-
-    </div>
-   
-  </div>
-
+  <div class="py-4">
+    <h1 class="fw-bold text-center" style="color: white;">MY PROJECTS</h1>
+    <div class="p-4">
+        <div class="row row-cols-md-3 row-cols-sm-2 row-cols-1 g-4 " id="project">
+          <div class="col">
+            <div class="card">
+                <img src="../public/image/street.jpg" class="img p-4" style="height: 400px">
+                <div class="card-body">
+                    <h5 class="card-title mb-3 fw-bold" name="ProjectName">PROJECT 1</h5>
+                    <div class="mb-2 fw-light"name="Duration">duration: 3 Bulan</div>
+                    <p class="card-text" name="Description">
+                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, repellat!
+                    </p>
+                    <div class="d-flex gap-2" style="width: 100%;">
+            
+                      <button type="button" class="btn btn-success" style="width:100%;">edit</button>
+                      <button type="button" class="btn btn-danger" style="width: 100%;">Delete</button>
+                    </div>
+                  </div>
+                </div>
+              </div>   
+              <div class="col">
+                <div class="card">
+                    <img src="../public/image/citynight.jpg" class="img p-4" style="height: 400px">
+                    <div class="card-body">
+                        <h5 class="card-title mb-3 fw-bold" name="ProjectName">PROJECT 1</h5>
+                        <div class="mb-2 fw-light"name="Duration">duration: 3 Bulan</div>
+                        <p class="card-text" name="Description">
+                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, repellat!
+                        </p>
+                        <div class="d-flex gap-2" style="width: 100%;">
+                
+                          <button type="button" class="btn btn-success" style="width:100%;">edit</button>
+                          <button type="button" class="btn btn-danger" style="width: 100%;">Delete</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>   
+                  <div class="col">
+                    <div class="card">
+                        <img src="../public/image/rain.jpg" class="img p-4" style="height: 400px">
+                        <div class="card-body">
+                            <h5 class="card-title mb-3 fw-bold" name="ProjectName">PROJECT 1</h5>
+                            <div class="mb-2 fw-light"name="Duration">duration: 3 Bulan</div>
+                            <p class="card-text" name="Description">
+                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, repellat!
+                            </p>
+                            <div class="d-flex gap-2" style="width: 100%;">
+                    
+                              <button type="button" class="btn btn-success" style="width:100%;">edit</button>
+                              <button type="button" class="btn btn-danger" style="width: 100%;">Delete</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>   
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
