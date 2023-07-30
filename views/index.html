@@ -30,20 +30,36 @@
                     <a class="nav-link active fw-bold" aria-current="page" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link fw-bold" href="/blog">Blog</a>
+                  <a class="nav-link fw-bold" href="blog">Blog</a>
               </li>
                 <li class="nav-item">
                   <a class="nav-link fw-bold" href="testimonials">Testimonials</a>
               </li>
             </ul>
             <div class="d-flex">
-                <a href="contact" class="btn btn-dark">Contact Me</a>
+
+              <a href="form-login" class="btn btn-dark" style="margin-right: 10px;">Login</a>
+              <a href="form-register" class="btn btn-dark" style="margin-right: 10px;">register</a>
+                <a href="contact" class="btn btn-dark">Contact</a>
             </div>
         </div>
     </div>
 </nav>
     <div class=" p-5">
     <div class="container d-flex flex-row m-3">
+      {{if .Flash.FlashMessage}}
+      {{if .Flash.FlashStatus}}
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+          <strong>{{.Flash.FlashMessage}}</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {{else}}
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+          <strong>{{.Flash.FlashMessage}}</strong>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+      {{end}}
+      {{end}}
       <div class="card d-flex flex-lg-row flex-sm-column flex-column"  style=" box-shadow: 1px 5px 10px rgba(134, 246, 246, 0.75);" >
       <div class="p-4 align-items-center">
       <h2 style="color:rgb(155, 67, 143) ;">WELCOME TO</h2><h2 class="br" style="color: aqua;">MY HUT</h2>
@@ -73,41 +89,52 @@
     </div>
   </div>
 </div>
-<div class="py-4">
+<!-- <div class="py-4">
   <h1 class="fw-bold text-center" style="color: white;">MY PROJECTS</h1>
   <div class="p-4">
       <div class="row row-cols-md-3 row-cols-sm-2 row-cols-1 g-4 " id="project">
-        {{range $index, $blogs := .Projects}}
+        {{range .Projects}}
         <div class="col" >
           <div class="card" style="box-shadow:5px 5px rgba(17, 17, 17, 1);">
                   <img src="../public/image/city2.jpg" class="img p-4" style="height: 400px;">
                   <div class="card-body">
-                      <h5 class="card-title mb-3 fw-bold" name="ProjectName"> <a href="/blog-detail/:id">{{$blogs.ProjectName}}</h5></a>
-                      <div class="mb-2 fw-light"name="Duration">duration: {{$blogs.Duration}}</div>
+                      <h5 class="card-title mb-3 fw-bold" name="ProjectName"> <a href="/blog-detail/{{.Id}}">{{.ProjectName}}</h5></a>
+                      <div class="mb-2 fw-light"name="Duration">duration: {{.Duration}}</div>
                       <p class="card-text" name="Description">
-                       {{$blogs.Description}}
+                       {{.Description}}
                       </p>
                       <div class="project-list-icon d-flex mb-5" id="project-list-icon">
-                        {{if $blogs.Javascript}}
+                        {{if .Javascript}}
                         <i class="fa-brands fa-square-js" style="font-size: 20px; margin: 7px;"></i>
-                        {{end}}{{if $blogs.ReactJs}}
+                        {{end}}{{if .ReactJs}}
                         <i class="fa-brands fa-react" style="font-size: 20px; margin: 7px;"></i>
-                        {{end}}{{if $blogs.Golang}}
+                        {{end}}{{if .Golang}}
                         <i class="fa-brands fa-golang" style="font-size: 20px; margin: 7px;"></i>
-                        {{end}}{{if $blogs.Java}}
+                        {{end}}{{if .Java}}
                         <i class="fa-brands fa-java" style="font-size: 20px; margin: 7px;"></i>
                         {{end}}
                         </div>
                       <div class="d-flex gap-2" style="width: 100%;">
                         <div class="d-flex gap-2" style="width: 100%;">
-                          <button type="button" class="btn btn-edit" style="width:100%; background-color:rgb(9, 9, 9); color: white;">edit</button>
-                          <button type="button" class="btn btn-delete" style="width: 100%; background-color:rgb(9, 9, 9); color: white;">Delete</button>
+                          <form
+                          action="/edit-blog/{{.Id}}"
+                          method="post">
+                          <button  class="btn btn-edit" style="width:100%; background-color:rgb(9, 9, 9); color: white;">edit</button>
+                          </form>
+
+                          <form
+                          action="/delete-blog/{{.Id}}"
+                          method="post"
+                          >
+                          
+                          <button class="btn btn-delete" style="width: 100%; background-color:rgb(9, 9, 9); color: white;">Delete</button>
+                          </form>
                         </div>                       
                       </div>
                     </div> 
                   </div>
                 </div>
-                {{end}} 
+                {{end}}  -->
                       
                <!---<div class="col">
                   <div class="card">

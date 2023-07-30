@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>edit project</title>
+</head>
+<body>
+  <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../public/project.css">
+    <!--font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body style="background-image: url(https://images.unsplash.com/photo-1601624749564-fad3d2098ea8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80)!important; background-position: center;background-repeat: no-repeat;background-size: cover;">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+          <img src="../public/image/logo.png" class="navbar-brand logo" href="#" />
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                      <a class="nav-link active fw-bold" aria-current="page" href="/home">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link fw-bold" href="/blog">Blog</a>
+                </li>
+                  <li class="nav-item">
+                    <a class="nav-link fw-bold" href="testimonials">Testimonials</a>
+                </li>
+              </ul>
+              <div class="d-flex">
+                  <a href="contact" class="btn btn-dark">Contact Me</a>
+              </div>
+          </div>
+      </div>
+  </nav>
+    <div
+      class="container-fluid d-flex justify-content-center align-items-center"
+    >
+      <div class="container-form" id="id">
+        <h2 class="mb-3 text-center" style="color: white;">UPDATE MY PROJECT</h2>
+        <form action="/edit-blog/{{.Id}}" method="POST">
+          <div class="mb-3">
+            <label for="input-project" class="form-label fw-bold" style="color: white;">Project Name</label>
+            <input type="text" id="input-project" class="form-control" name="input-project" value="{{.ProjectName}}"/>
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label fw-bold" style="color: white;">{{.Description}}</label>
+            <textarea id="description" class="form-control" name="content"></textarea>
+          </div>
+          <div class="row">
+            <div class="col-6">
+                <label class="form-label" for="input-start" style="color: white;">Start Date</label>
+                <input class="form-control mb-2" type="date" name="startDate" value="{{.StartDate}}" id="input-start" required>
+            </div>
+            <div class="col-6">
+                <label class="form-label" for="input-end" style="color: white;">End Date</label>
+                <input class="form-control mb-2" type="date" name="endDate" value="{{.EndDate}}" id="input-end" required>
+            </div>
+        </div>
+        <div class="row mt-2">
+          <label class="form-label" for="" style="color: white;">Technologies</label>
+          <div class="col">
+              <input type="checkbox" class="mx-2 check" id="javascript" name="javascript" value="javascript" {{if.Javascript}} {{end}}>
+              <label class="form-label" for="" class="mx-2 fw-normal" style="color: white;">Javascript</label>
+          </div>
+          <div class="col">
+              <input type="checkbox" class="mx-2 check" id="reactJS" name="reactJS" value="reactjs"  {{if.ReactJs}} {{end}}>
+              <label class="form-label" for="reactJS" class="mx-2 fw-normal" style="color: white;">React JS</label>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col">
+              <input type="checkbox" class="mx-2 check" id="golang" name="golang" value="golang"  {{if.Golang}} {{end}}>
+              <label class="form-label" for="" class="mx-2 fw-normal" style="color: white;">golang</label>
+          </div>
+          <div class="col">
+              <input type="checkbox" class="mx-2 check" id="java" name="java" value="java"  {{if.Java}} {{end}}>
+              <label class="form-label" for="" class="mx-2 fw-normal" style="color: white;">java</label>
+          </div>
+      </div>
+          <div class="mb-3">
+            <label for="input-image" class="form-label" style="color: white;">Upload Image</label>
+            <input type="file" id="input-image" class="form-control" />
+          </div>
+          <div class="d-grip gap-2 d-md-flex justify-content-md-end">
+            <button class="btn btn-dark text-white">
+              Post Blog
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+</body>
+</html>
